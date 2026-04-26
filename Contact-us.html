@@ -1,88 +1,139 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"content="width=device-width,initial-scale=1.0">
-  <title>Contact Us - BMW Nation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - BMW Nation</title>
 
-  <link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="style.css">
 
-  <meta name="description" content="Content BMW Nation to explore BMW models,performance, and innovation.">
-  <meta name="author"content="Ronald Betsho Shakambayo">
+<meta name="description" content="Contact BMW Nation to explore BMW models and innovation.">
+<meta name="author" content="Ronald Betsho Shakambayo">
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
     <div class="logo">
-        <img src="logo.png"alt="BMW Logo">
+        <img src="logo.png" alt="BMW Logo">
         <h1>BMW Nation</h1>
     </div>
 </header>
-  
-<!-- Navigation -->
+
 <nav>
     <a href="index.html">Home</a>
     <a href="About-us.html">About us</a>
-    <a href="Contact-us.html">Contact us</a>
+    <a href="Contact-us.html">Contact Us</a>
     <a href="Cars.html">Cars</a>
 </nav>
 
-<!-- Contact Section -->
 <section class="contact-section">
 
-    <h2>Contact Us</h2>
-    
-    <div class="contact-section">
+<h2>Contact Us</h2>
 
-    <!-- Contact Info -->
+<div class="contact-container">
+
+<!-- INFO -->
+<div class="contact-info">
     <h3>Get in Touch</h3>
 
-    <p>Gaborone, Botswana</p>
-    <p>+267 78527971</p>
+    <p>📍 Gaborone, Botswana</p>
+    <p>📞 +267 7852 7971</p>
+
     <p>
-        <a 
-href="https://wa.me/26778527971"target="_blank">
-                                                              Chat on WhatsApp
-        </a>
+        💬 <a href="https://wa.me/26778527971" target="_blank">
+        Chat on WhatsApp</a>
     </p>
+
     <p>
-        <a
-href="mailto:shakambayoronnie@gmail.com">
-
-shakambayoronnie@gmail.com
-          </a>
+        📧 <a href="mailto:shakambayoronnie@gmail.com">
+        shakambayoronnie@gmail.com</a>
     </p>
-    </div>
+</div>
 
-  <!-- Form -->
-  <div class="contact-form">
-      <h3>Send a Message</h3>
+<!-- FORM -->
+<div class="contact-form">
+    <h3>Send a Message</h3>
 
-      <form>
-          <input type="text"
-placeholder="Full Name" required>
-          <input type="email"
-placeholder="Email Address" required>
-          <input type="text"
-placeholder="Phone Number">
+    <form id="contactForm" novalidate>
 
-          <textarea
-placeholder="Your Message" rows="5"
-required></textarea>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" required minlength="3">
+            <small class="error"></small>
+        </div>
 
-                <button type="sumbit">Send Message</button>
-      </form>
-  </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" required>
+            <small class="error"></small>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" pattern="[0-9]{8,12}">
+            <small class="error"></small>
+        </div>
+
+        <div class="form-group">
+            <label>Your Message</label>
+            <textarea id="message" rows="5" required minlength="10"></textarea>
+            <small class="error"></small>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+</div>
 
 </div>
 
 </section>
 
-<!-- Footer -->
+
 <footer>
-<p>&copy; 2026 BMW Nation Dealership All rights reserved.</p>
-  </footer>
+    <p>&copy</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let phone = document.getElementById("phone");
+    let message = document.getElementById("message");
+
+    document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+    if (name.value.trim().length < 3) {
+        name.nextElementSibling.textContent = "Name must be at least 3 characters";
+        valid = false;
+    }
+
+    if (!email.value.includes("@")) {
+        email.nextElementSibling.textContent = "Enter a valid email";
+        valid = false;
+    }
+
+    if (phone.value && !phone.value.match(/^[0-9]{8,12}$/)) {
+        phone.nextElementSibling.textContent = "Enter valid numbers only (8–12 digits)";
+        valid = false;
+    }
+
+    if (message.value.trim().length < 10) {
+        message.nextElementSibling.textContent = "Message must be at least 10 characters";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Message sent successfully!");
+        this.reset();
+    }
+});
+</script>
+
 </body>
 </html>
