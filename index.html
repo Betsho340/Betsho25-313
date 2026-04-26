@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UFT-8">
-  <meta name="viewport" content="width=device-width, intial-scale=1.0">
-  <meta name="description" content="BMW Nation is website desinged to showcase BMW Vehicles ranging from different
-    of models to performance and luxury.">
+  <meta charset="UTF-8"> <!-- FIXED (was UFT-8) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- FIXED spelling -->
+
+  <meta name="description" content="BMW Nation is a website designed to showcase BMW vehicles ranging from different models to performance and luxury.">
   <meta name="author" content="Ronald Betsho Shakambayo">
 
   <link rel="stylesheet" href="Styles.css">
   
   <title>BMW Nation</title>
-  </head>
+</head>
 
 <body>
-<!-- Header --> 
+
+<!-- HEADER --> 
 <header>
     <div class="logo">
-        <img src="logo.png"alt="BMW Logo">
+        <img src="images/logo.png" alt="BMW Logo"> <!-- FIXED path -->
         <h1>BMW Nation</h1>
+    </div> <!-- FIXED missing closing div -->
 </header>
-<!-- Nagivation -->
+
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
-  <a href="About-us.html">About-us</a>
-  <a href="Contact-us.html">Contact-us</a>
-  <a href="Cars.html">Cars</a>
+  <a href="about.html">About Us</a> <!-- cleaner naming -->
+  <a href="contact.html">Contact Us</a>
+  <a href="cars.html">Models</a>
 </nav>
-<!-- Hero -->
+
+<!-- HERO -->
 <section class="hero">
     <div class="hero-text">
        <h1>Explore BMW Excellence</h1>
-       <p>Discover performance, luxury, and innovation in every BMW Model.</p>
-       <div> class="hero-buttons">
-            <a href="Cars.html">Explore Cars</a>
+       <p>Discover performance, luxury, and innovation in every BMW model.</p>
+
+       <!-- FIXED class syntax -->
+       <div class="hero-buttons">
+            <a href="cars.html">Explore Models</a>
        </div>
     </div>
 </section>
 
-<!-- Intro -->
+<!-- INTRO -->
 <section class="featured">
-    <h2 style="text-align:left;">Welcome to BMW Nation</h2>
+    <h2 style="text-align:center;">Welcome to BMW Nation</h2>
+
     <div class="car-grid">
         <div class="car-card">
-            <img src="images/m3.jpg"alt="BMW M3">
+            <img src="images/m3.jpg" alt="BMW M3">
             <h3>BMW M3 Competition</h3>
             <p>2024 Model</p>
             <p>3.0L Twin Turbo | 503 hp</p>
-            <p>0-100 Km/h: 3.8s</p>
+            <p>0–100 km/h: 3.8s</p>
         </div>
     </div>
 
-      <div class="box">
-        <h3>Videos</h3>
-        <iframe width="100%" height="200"src="https://www.youtube.com/embed/FaGvFBLeYqs"
-          title="BMW M4 Competition Review"frameborder="0" allow="accelerometer; autoplay;
-          clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen </iframe>
-      </div>
-<!-- Footer -->
+    <!-- VIDEO BOX -->
+    <div class="box">
+        <h3>Video</h3>
+        <iframe 
+            width="100%" 
+            height="200"
+            src="https://www.youtube.com/embed/FaGvFBLeYqs"
+            title="BMW M4 Competition Review"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <p> &copy; 2026 BMW Nation | All rights reserved.</p>
+    <p>&copy; 2026 BMW Nation | All rights reserved.</p>
 </footer>
+
 </body>
 </html>
