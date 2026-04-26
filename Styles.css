@@ -1,1 +1,274 @@
 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* NAV */
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+/* HERO */
+.hero {
+    background: url('images/m3.jpg') no-repeat center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #00aaff;
+    color: white;
+    text-decoration: none;
+}
+
+.hero-buttons a:hover {
+    background: #0077aa;
+}
+
+/* CONTAINERS */
+.container, .contact-container, .about-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* BOX */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+}
+
+/* CAR GRID */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.car-card {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* MODELS PAGE */
+.models {
+    padding: 40px 20px;
+}
+
+.car-detail {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.car-images {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.car-images img {
+    width: 48%;
+    border-radius: 5px;
+}
+
+/* SPECS */
+.car-detail ul {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.car-detail li {
+    padding: 5px 0;
+}
+
+/* ABOUT */
+.about-section {
+    padding: 40px 20px;
+}
+
+.about-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* TEAM */
+.team {
+    display: flex;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+/* CONTACT */
+.contact-section {
+    padding: 40px 20px;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* VALIDATION */
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+input:valid, textarea:valid {
+    border-color: green;
+}
+
+input:invalid, textarea:invalid {
+    border-color: red;
+}
+
+/* BUTTON */
+button {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0077aa;
+}
+
+/* MAP */
+.map-box {
+    height: 200px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .car-images img {
+        width: 100%;
+    }
+
+    .team {
+        flex-direction: column;
+    }
+}
