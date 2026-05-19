@@ -9,37 +9,24 @@
 </head>
 <body>
     <header>
-        <div class="header-container"><hgroup class="logo-section">
-                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+        <div class="header-container">
+            <hgroup class="logo-section">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Nation Logo" class="logo">
                 <h1>BMW NATION</h1>
-            </hgroup><p class="header-tagline">Luxury • Performance • Innovation</p></div>
+            </hgroup>
+            <p class="header-tagline">Luxury • Performance • Innovation</p>
+        </div>
     </header>
 
     <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">
-            
-            <span>Home</span>
-        </a>
-        <a href="About-us.html" class="nav-link">
-            
-            <span>About</span>
-        </a>
-        <a href="Cars.html" class="nav-link">
-            
-            <span>Cars</span>
-        </a>
-        <a href="Contact-us.html" class="nav-link">
-            
-            <span>Contact</span>
-        </a>
-        <a href="Feedback.html" class="nav-link active">
-            
-            <span>Feedback</span>
-        </a>
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <a href="About-us.html" class="nav-link"><span>About</span></a>
+        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
+        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
+        <a href="Feedback.html" class="nav-link active"><span>Feedback</span></a>
     </nav>
-    
+
     <script>
-        // Highlight active nav link
         document.querySelectorAll('.nav-link').forEach(link => {
             if (link.href === window.location.href) {
                 link.classList.add('active');
@@ -64,58 +51,26 @@
                     <form id="feedbackForm" novalidate>
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name"
-                                placeholder="Your name"
-                                required
-                                minlength="3"
-                            >
+                            <input type="text" id="name" name="name" placeholder="Your name" required minlength="3">
                             <span class="error-message" id="name-error"></span>
                         </div>
-
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email"
-                                placeholder="your@email.com"
-                                required
-                            >
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
                             <span class="error-message" id="email-error"></span>
                         </div>
-
                         <div class="form-group">
                             <label for="rating">Rating (1 - 5) *</label>
                             <div class="rating-input">
-                                <input 
-                                    type="range" 
-                                    id="rating" 
-                                    name="rating"
-                                    min="1" 
-                                    max="5"
-                                    value="3"
-                                    required
-                                >
-                                <span id="rating-display">3 </span>
+                                <input type="range" id="rating" name="rating" min="1" max="5" value="3" required>
+                                <span id="rating-display">3 ⭐</span>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Your Feedback *</label>
-                            <textarea 
-                                id="message" 
-                                name="message"
-                                placeholder="Share your thoughts and experiences..."
-                                rows="6"
-                                required
-                                minlength="5"
-                            ></textarea>
+                            <textarea id="message" name="message" placeholder="Share your thoughts and experiences..." rows="6" required minlength="5"></textarea>
                             <span class="error-message" id="message-error"></span>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-block">Submit Feedback</button>
                         <div class="success-message" id="success-message" style="display: none;">
                             ✓ Thank you! Your feedback has been recorded.
@@ -149,9 +104,9 @@
             </div>
             <div class="footer-section">
                 <h4>Connect</h4>
-                <p> Gaborone, Botswana</p>
-                <p> <a href="tel:+267785279711">+267 785 279 711</a></p>
-                <p> <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+                <p>Gaborone, Botswana</p>
+                <p><a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p><a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -165,7 +120,7 @@
         const ratingInput = document.getElementById("rating");
         const ratingDisplay = document.getElementById("rating-display");
         ratingInput.addEventListener("input", function() {
-            ratingDisplay.textContent = this.value + " ";
+            ratingDisplay.textContent = this.value + " ⭐";
         });
 
         document.getElementById("feedbackForm").addEventListener("submit", function(e) {
@@ -179,42 +134,18 @@
 
             let isValid = true;
 
-            if (name.length < 3) {
-                showError("name-error", "Name must be at least 3 characters");
-                isValid = false;
-            }
-
-            if (!isValidEmail(email)) {
-                showError("email-error", "Please enter a valid email address");
-                isValid = false;
-            }
-
-            if (message.length < 5) {
-                showError("message-error", "Feedback must be at least 5 characters");
-                isValid = false;
-            }
+            if (name.length < 3) { showError("name-error", "Name must be at least 3 characters"); isValid = false; }
+            if (!isValidEmail(email)) { showError("email-error", "Please enter a valid email address"); isValid = false; }
+            if (message.length < 5) { showError("message-error", "Feedback must be at least 5 characters"); isValid = false; }
 
             if (isValid) {
-                const newFeedback = {
-                    id: Date.now(),
-                    name,
-                    email,
-                    rating,
-                    message,
-                    timestamp: new Date().toLocaleString()
-                };
-
+                const newFeedback = { id: Date.now(), name, email, rating, message, timestamp: new Date().toLocaleString() };
                 feedbacks.unshift(newFeedback);
                 localStorage.setItem("bmw_feedbacks", JSON.stringify(feedbacks));
-
                 document.getElementById("success-message").style.display = "block";
                 this.reset();
-                ratingDisplay.textContent = "3 ";
-
-                setTimeout(() => {
-                    document.getElementById("success-message").style.display = "none";
-                }, 4000);
-
+                ratingDisplay.textContent = "3 ⭐";
+                setTimeout(() => { document.getElementById("success-message").style.display = "none"; }, 4000);
                 renderFeedback();
             }
         });
@@ -222,19 +153,17 @@
         function renderFeedback() {
             const list = document.getElementById("feedbackList");
             const count = document.getElementById("feedback-count");
-
             if (feedbacks.length === 0) {
                 list.innerHTML = '<p class="empty-state">No feedback yet. Be the first to share!</p>';
                 count.textContent = "(0)";
                 return;
             }
-
             count.textContent = `(${feedbacks.length})`;
             list.innerHTML = feedbacks.map(fb => `
                 <div class="feedback-card">
                     <div class="feedback-header">
                         <h4>${escapeHtml(fb.name)}</h4>
-                        <span class="feedback-rating">${"".repeat(fb.rating)}</span>
+                        <span class="feedback-rating">${"⭐".repeat(fb.rating)}</span>
                     </div>
                     <p class="feedback-message">${escapeHtml(fb.message)}</p>
                     <p class="feedback-meta">${fb.timestamp}</p>
@@ -242,33 +171,10 @@
             `).join("");
         }
 
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        function showError(elementId, message) {
-            const errorEl = document.getElementById(elementId);
-            errorEl.textContent = message;
-            errorEl.style.display = "block";
-        }
-
-        function clearErrors() {
-            document.querySelectorAll(".error-message").forEach(el => {
-                el.style.display = "none";
-                el.textContent = "";
-            });
-        }
-
-        function escapeHtml(text) {
-            const map = {
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#039;"
-            };
-            return text.replace(/[&<>"']/g, m => map[m]);
-        }
+        function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+        function showError(elementId, message) { const el = document.getElementById(elementId); el.textContent = message; el.style.display = "block"; }
+        function clearErrors() { document.querySelectorAll(".error-message").forEach(el => { el.style.display = "none"; el.textContent = ""; }); }
+        function escapeHtml(text) { const map = {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}; return text.replace(/[&<>"']/g, m => map[m]); }
 
         renderFeedback();
     </script>
