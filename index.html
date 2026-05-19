@@ -19,25 +19,14 @@
     </header>
 
     <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link active">
-            <span>Home</span>
-        </a>
-        <a href="About-us.html" class="nav-link">
-            <span>About</span>
-        </a>
-        <a href="Cars.html" class="nav-link">
-            <span>Cars</span>
-        </a>
-        <a href="Contact-us.html" class="nav-link">
-            <span>Contact</span>
-        </a>
-        <a href="Feedback.html" class="nav-link">
-            <span>Feedback</span>
-        </a>
+        <a href="index.html" class="nav-link active"><span>Home</span></a>
+        <a href="About-us.html" class="nav-link"><span>About</span></a>
+        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
+        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
+        <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
     </nav>
-    
+
     <script>
-        // Highlight active nav link
         document.querySelectorAll('.nav-link').forEach(link => {
             if (link.href === window.location.href) {
                 link.classList.add('active');
@@ -54,15 +43,16 @@
                 <h2 class="hero-title">Explore BMW Excellence</h2>
                 <p class="hero-subtitle">Experience the pinnacle of luxury and performance</p>
                 <nav class="hero-buttons">
-                    <a href="Cars.html" class="btn btn-primary btn-lg">
-                        View Cars
-                    </a>
-                    <a href="Contact-us.html" class="btn btn-secondary btn-lg">
-                        Get in Touch
-                    </a>
+                    <a href="Cars.html" class="btn btn-primary btn-lg">View Cars</a>
+                    <a href="Contact-us.html" class="btn btn-secondary btn-lg">Get in Touch</a>
                 </nav>
             </article>
-            <div class="hero-image" style="background: linear-gradient(135deg, #1a1a1a 0%, #00aaff 100%);"></div>
+            <div class="hero-image" style="
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg');
+                background-size: cover;
+                background-position: center;
+                display: block;
+            "></div>
         </section>
 
         <section class="featured">
@@ -72,35 +62,37 @@
             </header>
             <article class="featured-card">
                 <figure class="featured-image">
-                    <img src="images/m3.jpg" alt="BMW M3 Competition luxury sports car">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg"
+                         alt="BMW M3 Competition G80 luxury sports car"
+                         loading="eager">
                 </figure>
                 <article class="featured-content">
                     <h3>BMW M3 Competition</h3>
                     <p class="featured-tagline">Pure Performance. Pure Driving.</p>
                     <section class="specs-grid">
                         <article class="spec-item">
-                            <span class="spec-icon">Power</span>
+                            <span class="spec-icon">&#9889;</span>
                             <section class="spec-info">
                                 <span class="spec-label">Power Output</span>
                                 <span class="spec-value">503 hp</span>
                             </section>
                         </article>
                         <article class="spec-item">
-                            <span class="spec-icon">Speed</span>
+                            <span class="spec-icon">&#128293;</span>
                             <section class="spec-info">
                                 <span class="spec-label">Acceleration</span>
                                 <span class="spec-value">0-100 km/h in 3.8s</span>
                             </section>
                         </article>
                         <article class="spec-item">
-                            <span class="spec-icon">Velocity</span>
+                            <span class="spec-icon">&#128168;</span>
                             <section class="spec-info">
                                 <span class="spec-label">Top Speed</span>
                                 <span class="spec-value">290 km/h</span>
                             </section>
                         </article>
                         <article class="spec-item">
-                            <span class="spec-icon">Category</span>
+                            <span class="spec-icon">&#127942;</span>
                             <section class="spec-info">
                                 <span class="spec-label">Vehicle Type</span>
                                 <span class="spec-value">Performance Sedan</span>
@@ -116,6 +108,34 @@
             </article>
         </section>
 
+        <section style="padding: 50px 20px; background: #f8f9fa;">
+            <header class="section-header">
+                <h2>Our Collection</h2>
+                <p>A glimpse of what awaits you</p>
+            </header>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1400px; margin: 0 auto;">
+                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/BMW_M4_Coupe_%28F82%29_front.JPG" alt="BMW M4" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
+                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW M4 Competition</div>
+                </a>
+                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/2024_BMW_X5.jpg" alt="BMW X5" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
+                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW X5</div>
+                </a>
+                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/BMW_i8_%28I12%29_front.JPG" alt="BMW i8" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
+                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW i8 Hybrid</div>
+                </a>
+                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/BMW_X6_front.jpg" alt="BMW X6" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
+                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW X6</div>
+                </a>
+            </div>
+            <div style="text-align:center;margin-top:30px;">
+                <a href="Cars.html" class="btn btn-primary btn-lg">View All 8 Models</a>
+            </div>
+        </section>
+
         <section class="highlights">
             <header class="section-header">
                 <h2>Why BMW Nation?</h2>
@@ -123,22 +143,22 @@
             </header>
             <section class="highlights-grid">
                 <article class="highlight-card">
-                    <span class="highlight-icon">Premium</span>
+                    <span class="highlight-icon">&#10003;</span>
                     <h3>Curated Selection</h3>
                     <p>Hand-picked luxury vehicles that meet our strict quality standards</p>
                 </article>
                 <article class="highlight-card">
-                    <span class="highlight-icon">Service</span>
+                    <span class="highlight-icon">&#128101;</span>
                     <h3>Expert Support</h3>
                     <p>Knowledgeable team ready to help you find your perfect BMW</p>
                 </article>
                 <article class="highlight-card">
-                    <span class="highlight-icon">Value</span>
+                    <span class="highlight-icon">&#128176;</span>
                     <h3>Great Prices</h3>
                     <p>Competitive pricing on premium vehicles with flexible options</p>
                 </article>
                 <article class="highlight-card">
-                    <span class="highlight-icon">Delivery</span>
+                    <span class="highlight-icon">&#128666;</span>
                     <h3>Fast Delivery</h3>
                     <p>Quick and secure delivery across Botswana</p>
                 </article>
