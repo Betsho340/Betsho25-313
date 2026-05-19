@@ -19,25 +19,14 @@
     </header>
 
     <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">
-            <span>Home</span>
-        </a>
-        <a href="About-us.html" class="nav-link">
-            <span>About</span>
-        </a>
-        <a href="Cars.html" class="nav-link active">
-            <span>Cars</span>
-        </a>
-        <a href="Contact-us.html" class="nav-link">
-            <span>Contact</span>
-        </a>
-        <a href="Feedback.html" class="nav-link">
-            <span>Feedback</span>
-        </a>
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <a href="About-us.html" class="nav-link"><span>About</span></a>
+        <a href="Cars.html" class="nav-link active"><span>Cars</span></a>
+        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
+        <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
     </nav>
-    
+
     <script>
-        // Highlight active nav link
         document.querySelectorAll('.nav-link').forEach(link => {
             if (link.href === window.location.href) {
                 link.classList.add('active');
@@ -57,17 +46,10 @@
 
         <section class="showroom">
             <section class="car-grid" id="cars" role="region" aria-label="Car listings"></section>
-
             <nav class="pagination-container">
-                <button id="prevBtn" class="btn btn-pagination" onclick="prevPage()" aria-label="Previous page">
-                    Previous
-                </button>
-                <span class="page-info">
-                    Page <span id="page-number">1</span> of <span id="total-pages">1</span>
-                </span>
-                <button id="nextBtn" class="btn btn-pagination" onclick="nextPage()" aria-label="Next page">
-                    Next
-                </button>
+                <button id="prevBtn" class="btn btn-pagination" onclick="prevPage()" aria-label="Previous page">Previous</button>
+                <span class="page-info">Page <span id="page-number">1</span> of <span id="total-pages">1</span></span>
+                <button id="nextBtn" class="btn btn-pagination" onclick="nextPage()" aria-label="Next page">Next</button>
             </nav>
         </section>
 
@@ -94,9 +76,9 @@
             </div>
             <div class="footer-section">
                 <h4>Connect</h4>
-                <p> Gaborone, Botswana</p>
-                <p> <a href="tel:+267785279711">+267 785 279 711</a></p>
-                <p> <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+                <p>Gaborone, Botswana</p>
+                <p><a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p><a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -105,15 +87,17 @@
     </footer>
 
     <script>
+        const W = "https://upload.wikimedia.org/wikipedia/commons/";
+
         const cars = [
-            { name: "BMW M4", img: "images/m4.jpg", specs: "625 hp | 0-100 in 3.5s", price: "₽2.4M" },
-            { name: "BMW M3", img: "images/m3.jpg", specs: "503 hp | 0-100 in 3.8s", price: "₽1.8M" },
-            { name: "BMW X5", img: "images/x5.jpg", specs: "335 hp | Premium SUV", price: "₽2.1M" },
-            { name: "BMW X6", img: "images/x6.jpg", specs: "335 hp | Sporty SUV", price: "₽2.2M" },
-            { name: "BMW i8", img: "images/i8.jpg", specs: "369 hp | Hybrid Supercar", price: "₽2.8M" },
-            { name: "BMW M5", img: "images/m5.jpg", specs: "625 hp | Performance Sedan", price: "₽2.5M" },
-            { name: "BMW X3", img: "images/x3.jpg", specs: "335 hp | Compact SUV", price: "₽1.6M" },
-            { name: "BMW Z4", img: "images/z4.jpg", specs: "382 hp | Luxury Roadster", price: "₽1.9M" }
+            { name: "BMW M4 Competition", img: W + "c/c9/BMW_M4_Coupe_%28F82%29_front.JPG", specs: "625 hp | 0-100 in 3.5s", price: "&#x20BD;2.4M", badge: "M Series" },
+            { name: "BMW M3 Competition", img: W + "3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg", specs: "503 hp | 0-100 in 3.8s", price: "&#x20BD;1.8M", badge: "M Series" },
+            { name: "BMW X5", img: W + "6/69/2024_BMW_X5.jpg", specs: "335 hp | Premium SUV", price: "&#x20BD;2.1M", badge: "SAV" },
+            { name: "BMW X6", img: W + "1/15/BMW_X6_front.jpg", specs: "335 hp | Sporty SUV", price: "&#x20BD;2.2M", badge: "SAV" },
+            { name: "BMW i8", img: W + "b/b5/BMW_i8_%28I12%29_front.JPG", specs: "369 hp | Hybrid Supercar", price: "&#x20BD;2.8M", badge: "Hybrid" },
+            { name: "BMW M5", img: W + "0/00/BMW_M5.JPG", specs: "625 hp | Performance Sedan", price: "&#x20BD;2.5M", badge: "M Series" },
+            { name: "BMW X3", img: W + "0/03/BMW_X3_xDrive20d_%28G01%29_at_night_front.jpg", specs: "248 hp | Compact SUV", price: "&#x20BD;1.6M", badge: "SAV" },
+            { name: "BMW Z4 M40i", img: W + "c/c2/BMW_Z4_M40i_%28G29%29_front%2C_Dongguan_China_12_May_2024.jpg", specs: "382 hp | Luxury Roadster", price: "&#x20BD;1.9M", badge: "Roadster" }
         ];
 
         let currentPage = 1;
@@ -123,19 +107,16 @@
         function displayCars() {
             const container = document.getElementById("cars");
             container.innerHTML = "";
-            
-            let start = (currentPage - 1) * carsPerPage;
-            let end = start + carsPerPage;
-            let carsBatch = cars.slice(start, end);
-
-            carsBatch.forEach((car) => {
+            const start = (currentPage - 1) * carsPerPage;
+            cars.slice(start, start + carsPerPage).forEach((car) => {
                 const article = document.createElement("article");
                 article.className = "car-card";
                 article.innerHTML = `
                     <figure class="car-image-wrapper">
-                        <img src="${car.img}" alt="${car.name}">
-                        <div class="car-badge">Premium</div>
-                    </div>
+                        <img src="${car.img}" alt="${car.name}" loading="lazy"
+                             onerror="this.style.objectFit='contain';this.style.padding='20px'">
+                        <div class="car-badge">${car.badge}</div>
+                    </figure>
                     <div class="car-body">
                         <h3>${car.name}</h3>
                         <p class="car-specs">${car.specs}</p>
@@ -145,7 +126,6 @@
                 `;
                 container.appendChild(article);
             });
-
             updatePaginationUI();
         }
 
@@ -156,24 +136,10 @@
             document.getElementById("nextBtn").disabled = currentPage === totalPages;
         }
 
-        function nextPage() {
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayCars();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-        }
-
-        function prevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                displayCars();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-        }
+        function nextPage() { if (currentPage < totalPages) { currentPage++; displayCars(); window.scrollTo({ top: 0, behavior: "smooth" }); } }
+        function prevPage() { if (currentPage > 1) { currentPage--; displayCars(); window.scrollTo({ top: 0, behavior: "smooth" }); } }
 
         displayCars();
     </script>
 </body>
 </html>
-
