@@ -1,100 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BMW Cars</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse BMW's luxury car lineup - M3, M4, X5, and more">
+    <title>BMW Showroom - BMW Nation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="header-container">
+            <hgroup class="logo-section">
+                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+                <h1>BMW NATION</h1>
+            </hgroup>
+            <p class="header-tagline">Luxury • Performance • Innovation</p>
+        </div>
+    </header>
 
-<header>
-  <div class="header-container">
-    <img src="logo.png" alt="BMW Logo">
-    <h1>BMW Nation</h1>
-  </div>
-</header>
+    <nav aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">
+            <span>Home</span>
+        </a>
+        <a href="About-us.html" class="nav-link">
+            <span>About</span>
+        </a>
+        <a href="Cars.html" class="nav-link active">
+            <span>Cars</span>
+        </a>
+        <a href="Contact-us.html" class="nav-link">
+            <span>Contact</span>
+        </a>
+        <a href="Feedback.html" class="nav-link">
+            <span>Feedback</span>
+        </a>
+    </nav>
+    
+    <script>
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="About-us.html">About Us</a>
-  <a href="Cars.html">Cars</a>
-  <a href="Contact-us.html">Contact Us</a>
-</nav>
+    <main>
+        <section class="showroom-hero">
+            <header class="showroom-hero-content">
+                <h2>BMW Showroom</h2>
+                <p>Discover our premium collection of luxury vehicles</p>
+            </header>
+        </section>
 
-<main>
+        <section class="showroom">
+            <section class="car-grid" id="cars" role="region" aria-label="Car listings"></section>
 
-<section>
-  <h2 style="text-align:center;">BMW Showroom</h2>
+            <nav class="pagination-container">
+                <button id="prevBtn" class="btn btn-pagination" onclick="prevPage()" aria-label="Previous page">
+                    Previous
+                </button>
+                <span class="page-info">
+                    Page <span id="page-number">1</span> of <span id="total-pages">1</span>
+                </span>
+                <button id="nextBtn" class="btn btn-pagination" onclick="nextPage()" aria-label="Next page">
+                    Next
+                </button>
+            </nav>
+        </section>
 
-  <div class="car-grid" id="cars"></div>
+        <section class="cta-section">
+            <h2>Can't Find What You're Looking For?</h2>
+            <p>Contact our experts to find your perfect BMW</p>
+            <a href="Contact-us.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        </section>
+    </main>
 
-  <div class="pagination">
-    <button onclick="prevPage()">Previous</button>
-    <span id="page-number">1</span>
-    <button onclick="nextPage()">Next</button>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <p>BMW Nation © 2026</p>
-</footer>
-
-<script>
-const cars = [
-    { name: "BMW M4", img: "images/m4.jpg" },
-    { name: "BMW M3", img: "images/m3.jpg" },
-    { name: "BMW X5", img: "images/x5.jpg" },
-    { name: "BMW X6", img: "images/x6.jpg" },
-    { name: "BMW i8", img: "images/i8.jpg" },
-    { name: "BMW M5", img: "images/m5.jpg" },
-    { name: "BMW X3", img: "images/x3.jpg" },
-    { name: "BMW Z4", img: "images/z4.jpg" }
-];
-
-let currentPage = 1;
-const carsPerPage = 8;
-
-function displayCars() {
-    const container = document.getElementById("cars");
-    container.innerHTML = "";
-
-    let start = (currentPage - 1) * carsPerPage;
-    let end = start + carsPerPage;
-
-    cars.slice(start, end).forEach(car => {
-        container.innerHTML += `
-        <article class="car-card">
-            <img src="${car.img}" alt="${car.name}">
-            <div class="car-body">
-                <h3>${car.name}</h3>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BMW Nation</h4>
+                <p>Your premier destination for luxury vehicles</p>
             </div>
-        </article>`;
-    });
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p> Gaborone, Botswana</p>
+                <p> <a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p> <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMW Nation. All rights reserved.</p>
+        </div>
+    </footer>
 
-    document.getElementById("page-number").innerText = currentPage;
-}
+    <script>
+        const cars = [
+            { name: "BMW M4", img: "images/m4.jpg", specs: "625 hp | 0-100 in 3.5s", price: "₽2.4M" },
+            { name: "BMW M3", img: "images/m3.jpg", specs: "503 hp | 0-100 in 3.8s", price: "₽1.8M" },
+            { name: "BMW X5", img: "images/x5.jpg", specs: "335 hp | Premium SUV", price: "₽2.1M" },
+            { name: "BMW X6", img: "images/x6.jpg", specs: "335 hp | Sporty SUV", price: "₽2.2M" },
+            { name: "BMW i8", img: "images/i8.jpg", specs: "369 hp | Hybrid Supercar", price: "₽2.8M" },
+            { name: "BMW M5", img: "images/m5.jpg", specs: "625 hp | Performance Sedan", price: "₽2.5M" },
+            { name: "BMW X3", img: "images/x3.jpg", specs: "335 hp | Compact SUV", price: "₽1.6M" },
+            { name: "BMW Z4", img: "images/z4.jpg", specs: "382 hp | Luxury Roadster", price: "₽1.9M" }
+        ];
 
-function nextPage() {
-    if (currentPage * carsPerPage < cars.length) {
-        currentPage++;
+        let currentPage = 1;
+        const carsPerPage = 4;
+        const totalPages = Math.ceil(cars.length / carsPerPage);
+
+        function displayCars() {
+            const container = document.getElementById("cars");
+            container.innerHTML = "";
+            
+            let start = (currentPage - 1) * carsPerPage;
+            let end = start + carsPerPage;
+            let carsBatch = cars.slice(start, end);
+
+            carsBatch.forEach((car) => {
+                const article = document.createElement("article");
+                article.className = "car-card";
+                article.innerHTML = `
+                    <figure class="car-image-wrapper">
+                        <img src="${car.img}" alt="${car.name}">
+                        <div class="car-badge">Premium</div>
+                    </div>
+                    <div class="car-body">
+                        <h3>${car.name}</h3>
+                        <p class="car-specs">${car.specs}</p>
+                        <p class="car-price">${car.price}</p>
+                        <a href="Contact-us.html" class="btn btn-small">Request Info</a>
+                    </div>
+                `;
+                container.appendChild(article);
+            });
+
+            updatePaginationUI();
+        }
+
+        function updatePaginationUI() {
+            document.getElementById("page-number").innerText = currentPage;
+            document.getElementById("total-pages").innerText = totalPages;
+            document.getElementById("prevBtn").disabled = currentPage === 1;
+            document.getElementById("nextBtn").disabled = currentPage === totalPages;
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayCars();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayCars();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        }
+
         displayCars();
-    }
-}
-
-function prevPage() {
-    if (currentPage > 1) {
-        currentPage--;
-        displayCars();
-    }
-}
-
-displayCars();
-</script>
-
+    </script>
 </body>
 </html>
+
