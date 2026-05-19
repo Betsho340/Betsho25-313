@@ -3,135 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Contact Us - BMW Nation</title>
-
-<link rel="stylesheet" href="Styles.css">
-
-<meta name="description" content="Contact BMW Nation to explore BMW models and innovation.">
-<meta name="author" content="Ronald Betsho Shakambayo">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="BMW Logo">
-        <h1>BMW Nation</h1>
-    </div>
+  <div class="header-container">
+    <img src="logo.png" alt="BMW Logo">
+    <h1>BMW Nation</h1>
+  </div>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="About-us.html">About us</a>
-    <a href="Contact-us.html">Contact Us</a>
-    <a href="Cars.html">Cars</a>
+  <a href="index.html">Home</a>
+  <a href="About-us.html">About Us</a>
+  <a href="Cars.html">Cars</a>
+  <a href="Contact-us.html">Contact Us</a>
 </nav>
 
-<section class="contact-section">
+<main>
 
-<h2>Contact Us</h2>
+<section>
 
-<div class="contact-container">
+<article>
+  <h2>Contact Information</h2>
+  <p>📍 Gaborone, Botswana</p>
+  <p>📞 +267 7852 7971</p>
+  <p>📧 shakambayoronnie@gmail.com</p>
+</article>
 
-<!-- INFO -->
-<div class="contact-info">
-    <h3>Get in Touch</h3>
+<article>
+  <h2>Send Message</h2>
 
-    <p>📍 Gaborone, Botswana</p>
-    <p>📞 +267 7852 7971</p>
+  <form id="contactForm">
 
-    <p>
-        💬 <a href="https://wa.me/26778527971" target="_blank">
-        Chat on WhatsApp</a>
-    </p>
+    <label>Name</label>
+    <input type="text" id="name">
 
-    <p>
-        📧 <a href="mailto:shakambayoronnie@gmail.com">
-        shakambayoronnie@gmail.com</a>
-    </p>
-</div>
+    <label>Email</label>
+    <input type="email" id="email">
 
-<!-- FORM -->
-<div class="contact-form">
-    <h3>Send a Message</h3>
+    <label>Phone</label>
+    <input type="tel" id="phone">
 
-    <form id="contactForm" novalidate>
+    <label>Message</label>
+    <textarea id="message"></textarea>
 
-        <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" id="name" required minlength="3">
-            <small class="error"></small>
-        </div>
+    <button type="submit">Send</button>
 
-        <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" id="email" required>
-            <small class="error"></small>
-        </div>
-
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="phone" pattern="[0-9]{8,12}">
-            <small class="error"></small>
-        </div>
-
-        <div class="form-group">
-            <label>Your Message</label>
-            <textarea id="message" rows="5" required minlength="10"></textarea>
-            <small class="error"></small>
-        </div>
-
-        <button type="submit">Send Message</button>
-
-    </form>
-</div>
-
-</div>
+  </form>
+</article>
 
 </section>
 
+</main>
 
 <footer>
-    <p>&copy; 2026 BMW Nation Dealership. All rights reserved</p>
+  <p>BMW Nation © 2026</p>
 </footer>
 
 <script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+document.getElementById("contactForm").addEventListener("submit", function(e){
     e.preventDefault();
-
-    let valid = true;
 
     let name = document.getElementById("name");
     let email = document.getElementById("email");
-    let phone = document.getElementById("phone");
     let message = document.getElementById("message");
 
-    document.querySelectorAll(".error").forEach(e => e.textContent = "");
-
-    if (name.value.trim().length < 3) {
-        name.nextElementSibling.textContent = "Name must be at least 3 characters";
-        valid = false;
+    if(name.value.length < 3){
+        alert("Name too short");
+        return;
     }
 
-    if (!email.value.includes("@")) {
-        email.nextElementSibling.textContent = "Enter a valid email";
-        valid = false;
+    if(!email.value.includes("@")){
+        alert("Invalid email");
+        return;
     }
 
-    if (phone.value && !phone.value.match(/^[0-9]{8,12}$/)) {
-        phone.nextElementSibling.textContent = "Enter valid numbers only (8–12 digits)";
-        valid = false;
+    if(message.value.length < 10){
+        alert("Message too short");
+        return;
     }
 
-    if (message.value.trim().length < 10) {
-        message.nextElementSibling.textContent = "Message must be at least 10 characters";
-        valid = false;
-    }
-
-    if (valid) {
-        alert("Message sent successfully!");
-        this.reset();
-    }
+    alert("Message sent successfully!");
+    this.reset();
 });
 </script>
 
