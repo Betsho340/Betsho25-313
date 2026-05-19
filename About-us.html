@@ -11,7 +11,7 @@
     <header>
         <div class="header-container">
             <hgroup class="logo-section">
-                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Nation Logo" class="logo">
                 <h1>BMW NATION</h1>
             </hgroup>
             <p class="header-tagline">Luxury • Performance • Innovation</p>
@@ -19,25 +19,14 @@
     </header>
 
     <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">
-            <span>Home</span>
-        </a>
-        <a href="About-us.html" class="nav-link active">
-            <span>About</span>
-        </a>
-        <a href="Cars.html" class="nav-link">
-            <span>Cars</span>
-        </a>
-        <a href="Contact-us.html" class="nav-link">
-            <span>Contact</span>
-        </a>
-        <a href="Feedback.html" class="nav-link">
-            <span>Feedback</span>
-        </a>
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <a href="About-us.html" class="nav-link active"><span>About</span></a>
+        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
+        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
+        <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
     </nav>
-    
+
     <script>
-        // Highlight active nav link
         document.querySelectorAll('.nav-link').forEach(link => {
             if (link.href === window.location.href) {
                 link.classList.add('active');
