@@ -1,126 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Customer Feedback - BMW Nation</title>
-
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share your feedback about BMW Nation - we value your opinion">
+    <title>Customer Feedback - BMW Nation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="header-container"><hgroup class="logo-section">
+                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+                <h1>BMW NATION</h1>
+            </hgroup><p class="header-tagline">Luxury • Performance • Innovation</p></div>
+    </header>
 
-<!-- HEADER -->
-<header>
-  <div class="header-container">
-    <img src="logo.png" alt="BMW Logo">
-    <h1>BMW Nation</h1>
-  </div>
-</header>
+    <nav aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">
+            
+            <span>Home</span>
+        </a>
+        <a href="About-us.html" class="nav-link">
+            
+            <span>About</span>
+        </a>
+        <a href="Cars.html" class="nav-link">
+            
+            <span>Cars</span>
+        </a>
+        <a href="Contact-us.html" class="nav-link">
+            
+            <span>Contact</span>
+        </a>
+        <a href="Feedback.html" class="nav-link active">
+            
+            <span>Feedback</span>
+        </a>
+    </nav>
+    
+    <script>
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="About-us.html">About Us</a>
-  <a href="Cars.html">Cars</a>
-  <a href="Contact-us.html">Contact Us</a>
-  <a href="Feedback.html">Feedback</a>
-</nav>
+    <main>
+        <section class="feedback-hero">
+            <div class="feedback-hero-content">
+                <h2>Customer Feedback</h2>
+                <p>We value your opinion. Help us improve by sharing your experience.</p>
+            </div>
+        </section>
 
-<main>
+        <section class="feedback-section">
+            <div class="feedback-grid">
+                <article class="feedback-form-card">
+                    <h3>Share Your Feedback</h3>
+                    <form id="feedbackForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                placeholder="Your name"
+                                required
+                                minlength="3"
+                            >
+                            <span class="error-message" id="name-error"></span>
+                        </div>
 
-<!-- INTRO -->
-<section>
-  <article>
-    <h2>Customer Feedback</h2>
-    <p>We value your opinion. Share your experience with BMW Nation below.</p>
-  </article>
-</section>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="your@email.com"
+                                required
+                            >
+                            <span class="error-message" id="email-error"></span>
+                        </div>
 
-<!-- FEEDBACK FORM -->
-<section>
+                        <div class="form-group">
+                            <label for="rating">Rating (1 - 5) *</label>
+                            <div class="rating-input">
+                                <input 
+                                    type="range" 
+                                    id="rating" 
+                                    name="rating"
+                                    min="1" 
+                                    max="5"
+                                    value="3"
+                                    required
+                                >
+                                <span id="rating-display">3 </span>
+                            </div>
+                        </div>
 
-  <article>
-    <h3>Leave Your Feedback</h3>
+                        <div class="form-group">
+                            <label for="message">Your Feedback *</label>
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                placeholder="Share your thoughts and experiences..."
+                                rows="6"
+                                required
+                                minlength="5"
+                            ></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
 
-    <form id="feedbackForm">
+                        <button type="submit" class="btn btn-primary btn-block">Submit Feedback</button>
+                        <div class="success-message" id="success-message" style="display: none;">
+                            ✓ Thank you! Your feedback has been recorded.
+                        </div>
+                    </form>
+                </article>
 
-      <label>Full Name</label>
-      <input type="text" id="name" required>
+                <article class="feedback-list-card">
+                    <h3>Recent Feedback <span id="feedback-count">(0)</span></h3>
+                    <div id="feedbackList" role="region" aria-label="Customer feedback">
+                        <p class="empty-state">No feedback yet. Be the first to share!</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-      <label>Email</label>
-      <input type="email" id="email" required>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BMW Nation</h4>
+                <p>Your premier destination for luxury vehicles</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Cars.html">Browse Cars</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p> Gaborone, Botswana</p>
+                <p> <a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p> <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMW Nation. All rights reserved.</p>
+        </div>
+    </footer>
 
-      <label>Rating (1 - 5)</label>
-      <input type="number" id="rating" min="1" max="5" required>
+    <script>
+        let feedbacks = JSON.parse(localStorage.getItem("bmw_feedbacks")) || [];
 
-      <label>Your Feedback</label>
-      <textarea id="message" rows="5" required></textarea>
+        const ratingInput = document.getElementById("rating");
+        const ratingDisplay = document.getElementById("rating-display");
+        ratingInput.addEventListener("input", function() {
+            ratingDisplay.textContent = this.value + " ";
+        });
 
-      <button type="submit">Submit Feedback</button>
+        document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            clearErrors();
 
-    </form>
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const rating = document.getElementById("rating").value;
+            const message = document.getElementById("message").value.trim();
 
-  </article>
+            let isValid = true;
 
-</section>
+            if (name.length < 3) {
+                showError("name-error", "Name must be at least 3 characters");
+                isValid = false;
+            }
 
-<!-- DISPLAY FEEDBACK -->
-<section>
-  <article>
-    <h3>Recent Feedback</h3>
-    <div id="feedbackList"></div>
-  </article>
-</section>
+            if (!isValidEmail(email)) {
+                showError("email-error", "Please enter a valid email address");
+                isValid = false;
+            }
 
-</main>
+            if (message.length < 5) {
+                showError("message-error", "Feedback must be at least 5 characters");
+                isValid = false;
+            }
 
-<!-- FOOTER -->
-<footer>
-  <p>BMW Nation © 2026</p>
-</footer>
+            if (isValid) {
+                const newFeedback = {
+                    id: Date.now(),
+                    name,
+                    email,
+                    rating,
+                    message,
+                    timestamp: new Date().toLocaleString()
+                };
 
-<script>
-let feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+                feedbacks.unshift(newFeedback);
+                localStorage.setItem("bmw_feedbacks", JSON.stringify(feedbacks));
 
-function renderFeedback() {
-    const list = document.getElementById("feedbackList");
-    list.innerHTML = "";
+                document.getElementById("success-message").style.display = "block";
+                this.reset();
+                ratingDisplay.textContent = "3 ";
 
-    feedbacks.forEach(fb => {
-        list.innerHTML += `
-        <div class="feedback-card">
-            <h4>${fb.name} ⭐ ${fb.rating}/5</h4>
-            <p>${fb.message}</p>
-        </div>`;
-    });
-}
+                setTimeout(() => {
+                    document.getElementById("success-message").style.display = "none";
+                }, 4000);
 
-document.getElementById("feedbackForm").addEventListener("submit", function(e){
-    e.preventDefault();
+                renderFeedback();
+            }
+        });
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let rating = document.getElementById("rating").value;
-    let message = document.getElementById("message").value;
+        function renderFeedback() {
+            const list = document.getElementById("feedbackList");
+            const count = document.getElementById("feedback-count");
 
-    if(name.length < 3 || message.length < 5){
-        alert("Please fill in all fields properly.");
-        return;
-    }
+            if (feedbacks.length === 0) {
+                list.innerHTML = '<p class="empty-state">No feedback yet. Be the first to share!</p>';
+                count.textContent = "(0)";
+                return;
+            }
 
-    let newFeedback = { name, email, rating, message };
-    feedbacks.push(newFeedback);
+            count.textContent = `(${feedbacks.length})`;
+            list.innerHTML = feedbacks.map(fb => `
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <h4>${escapeHtml(fb.name)}</h4>
+                        <span class="feedback-rating">${"".repeat(fb.rating)}</span>
+                    </div>
+                    <p class="feedback-message">${escapeHtml(fb.message)}</p>
+                    <p class="feedback-meta">${fb.timestamp}</p>
+                </div>
+            `).join("");
+        }
 
-    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
 
-    this.reset();
-    renderFeedback();
-});
+        function showError(elementId, message) {
+            const errorEl = document.getElementById(elementId);
+            errorEl.textContent = message;
+            errorEl.style.display = "block";
+        }
 
-renderFeedback();
-</script>
+        function clearErrors() {
+            document.querySelectorAll(".error-message").forEach(el => {
+                el.style.display = "none";
+                el.textContent = "";
+            });
+        }
 
+        function escapeHtml(text) {
+            const map = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        renderFeedback();
+    </script>
 </body>
 </html>
