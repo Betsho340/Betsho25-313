@@ -1,97 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact Us - BMW Nation</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact BMW Nation - Get in touch with us today">
+    <title>Contact Us - BMW Nation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="header-container"><hgroup class="logo-section">
+                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+                <h1>BMW NATION</h1>
+            </hgroup><p class="header-tagline">Luxury • Performance • Innovation</p></div>
+    </header>
 
-<header>
-  <div class="header-container">
-    <img src="logo.png" alt="BMW Logo">
-    <h1>BMW Nation</h1>
-  </div>
-</header>
+    <nav aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">
+            
+            <span>Home</span>
+        </a>
+        <a href="About-us.html" class="nav-link">
+            
+            <span>About</span>
+        </a>
+        <a href="Cars.html" class="nav-link">
+            
+            <span>Cars</span>
+        </a>
+        <a href="Contact-us.html" class="nav-link active">
+            
+            <span>Contact</span>
+        </a>
+        <a href="Feedback.html" class="nav-link">
+            
+            <span>Feedback</span>
+        </a>
+    </nav>
+    
+    <script>
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="About-us.html">About Us</a>
-  <a href="Cars.html">Cars</a>
-  <a href="Contact-us.html">Contact Us</a>
-</nav>
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h2>Get In Touch</h2>
+                <p>We'd love to hear from you. Let's talk about your next BMW.</p>
+            </div>
+        </section>
 
-<main>
+        <section class="contact-section">
+            <section class="contact-grid">
+                <article class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <article class="info-item">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <p class="info-label">Location</p>
+                            <p class="info-text">Gaborone, Botswana</p>
+                        </div>
+                    </div>
+                    <article class="info-item">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <p class="info-label">Phone</p>
+                            <p class="info-text"><a href="tel:+267785279711">+267 785 279 711</a></p>
+                        </div>
+                    </div>
+                    <article class="info-item">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <p class="info-label">Email</p>
+                            <p class="info-text"><a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <article class="info-item">
+                        <div class="info-icon"></div>
+                        <div class="info-content">
+                            <p class="info-label">Hours</p>
+                            <p class="info-text">Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </article>
 
-<section>
+                <article class="contact-form-card">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                placeholder="Your full name"
+                                required
+                                minlength="3"
+                            >
+                            <span class="error-message" id="name-error"></span>
+                        </div>
 
-<article>
-  <h2>Contact Information</h2>
-  <p>📍 Gaborone, Botswana</p>
-  <p>📞 +267 7852 7971</p>
-  <p>📧 shakambayoronnie@gmail.com</p>
-</article>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="your@email.com"
+                                required
+                            >
+                            <span class="error-message" id="email-error"></span>
+                        </div>
 
-<article>
-  <h2>Send Message</h2>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                placeholder="+267 xx xxx xxxx"
+                            >
+                        </div>
 
-  <form id="contactForm">
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject"
+                                placeholder="What is this about?"
+                                required
+                            >
+                        </div>
 
-    <label>Name</label>
-    <input type="text" id="name">
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                placeholder="Tell us what you'd like to discuss..."
+                                rows="5"
+                                required
+                                minlength="10"
+                            ></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
 
-    <label>Email</label>
-    <input type="email" id="email">
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <div class="success-message" id="success-message" style="display: none;">
+                            ✓ Message sent successfully! We'll get back to you soon.
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
 
-    <label>Phone</label>
-    <input type="tel" id="phone">
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BMW Nation</h4>
+                <p>Your premier destination for luxury vehicles</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Cars.html">Browse Cars</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p> Gaborone, Botswana</p>
+                <p> <a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p> <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMW Nation. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <label>Message</label>
-    <textarea id="message"></textarea>
+    <script>
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("success-message");
 
-    <button type="submit">Send</button>
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            clearErrors();
 
-  </form>
-</article>
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-</section>
+            let isValid = true;
 
-</main>
+            if (name.length < 3) {
+                showError("name-error", "Name must be at least 3 characters");
+                isValid = false;
+            }
 
-<footer>
-  <p>BMW Nation © 2026</p>
-</footer>
+            if (!isValidEmail(email)) {
+                showError("email-error", "Please enter a valid email address");
+                isValid = false;
+            }
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
+            if (message.length < 10) {
+                showError("message-error", "Message must be at least 10 characters");
+                isValid = false;
+            }
 
-    let name = document.getElementById("name");
-    let email = document.getElementById("email");
-    let message = document.getElementById("message");
+            if (isValid) {
+                const contactData = {
+                    name,
+                    email,
+                    phone: document.getElementById("phone").value.trim(),
+                    subject: document.getElementById("subject").value.trim(),
+                    message,
+                    timestamp: new Date().toISOString()
+                };
+                console.log("Contact submitted:", contactData);
 
-    if(name.value.length < 3){
-        alert("Name too short");
-        return;
-    }
+                successMessage.style.display = "block";
+                form.reset();
 
-    if(!email.value.includes("@")){
-        alert("Invalid email");
-        return;
-    }
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 5000);
+            }
+        });
 
-    if(message.value.length < 10){
-        alert("Message too short");
-        return;
-    }
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
 
-    alert("Message sent successfully!");
-    this.reset();
-});
-</script>
+        function showError(elementId, message) {
+            const errorEl = document.getElementById(elementId);
+            errorEl.textContent = message;
+            errorEl.style.display = "block";
+        }
 
+        function clearErrors() {
+            document.querySelectorAll(".error-message").forEach(el => {
+                el.style.display = "none";
+                el.textContent = "";
+            });
+        }
+    </script>
 </body>
 </html>
