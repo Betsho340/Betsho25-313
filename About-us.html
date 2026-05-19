@@ -1,65 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About Us - BMW Nation</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about BMW Nation - your destination for luxury vehicles">
+    <title>About Us - BMW Nation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="header-container">
+            <hgroup class="logo-section">
+                <img src="logo.png" alt="BMW Nation Logo" class="logo">
+                <h1>BMW NATION</h1>
+            </hgroup>
+            <p class="header-tagline">Luxury • Performance • Innovation</p>
+        </div>
+    </header>
 
-<header>
-  <div class="header-container">
-    <img src="logo.png" alt="BMW Logo">
-    <h1>BMW Nation</h1>
-  </div>
-</header>
+    <nav aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">
+            <span>Home</span>
+        </a>
+        <a href="About-us.html" class="nav-link active">
+            <span>About</span>
+        </a>
+        <a href="Cars.html" class="nav-link">
+            <span>Cars</span>
+        </a>
+        <a href="Contact-us.html" class="nav-link">
+            <span>Contact</span>
+        </a>
+        <a href="Feedback.html" class="nav-link">
+            <span>Feedback</span>
+        </a>
+    </nav>
+    
+    <script>
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="About-us.html">About Us</a>
-  <a href="Cars.html">Cars</a>
-  <a href="Contact-us.html">Contact Us</a>
-</nav>
+    <main>
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h2>About BMW Nation</h2>
+                <p>Your Premier Destination for Luxury & Performance</p>
+            </div>
+        </section>
 
-<main>
+        <section class="about-content">
+            <article class="about-article">
+                <h3>Our Mission</h3>
+                <p>At BMW Nation, we celebrate the art of driving. Our mission is to connect enthusiasts with the world's finest luxury vehicles, showcasing innovation, performance, and timeless German engineering. We believe every car tells a story—and we're here to help you write yours.</p>
+            </article>
 
-<section>
-  <article>
-    <h2>About BMW Nation</h2>
-    <p>
-      BMW Nation is a platform dedicated to showcasing BMW vehicles,
-      focusing on performance, luxury, and modern automotive innovation.
-    </p>
-  </article>
+            <article class="about-article">
+                <h3>Why Choose BMW?</h3>
+                <section class="features-list">
+                    <article class="feature-item">
+                        <strong>Engineering Excellence</strong>
+                        <p>Precision German engineering at its finest</p>
+                    </article>
+                    <article class="feature-item">
+                        <strong>Performance</strong>
+                        <p>Exhilarating acceleration and handling</p>
+                    </article>
+                    <article class="feature-item">
+                        <strong>Luxury</strong>
+                        <p>Premium interiors with cutting-edge technology</p>
+                    </article>
+                    <article class="feature-item">
+                        <strong>Innovation</strong>
+                        <p>Leading the future of automotive design</p>
+                    </article>
+                </section>
+            </article>
 
-  <article>
-    <h3>Our Mission</h3>
-    <p>To help users explore BMW models and understand their engineering excellence.</p>
-  </article>
+            <article class="about-article">
+                <h3>Our Story</h3>
+                <p>Founded with a passion for automotive excellence, BMW Nation has become the go-to platform for luxury car enthusiasts across Botswana and beyond. We believe in bringing the world's best vehicles within reach and creating a community of like-minded car lovers. Every vehicle in our showroom is carefully selected to ensure it meets our high standards for quality, performance, and elegance.</p>
+            </article>
 
-  <article>
-    <h3>Our Vision</h3>
-    <p>To become a leading automotive showcase platform for premium vehicles.</p>
-  </article>
+            <article class="about-article stats-article">
+                <h3>By The Numbers</h3>
+                <section class="stats-grid">
+                    <article class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Premium Vehicles</span>
+                    </article>
+                    <article class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </article>
+                    <article class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Universities</span>
+                    </article>
+                    <article class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </article>
+                </section>
+            </article>
 
-  <article>
-    <h3>What We Offer</h3>
-    <ul>
-      <li>BMW Model Showcase</li>
-      <li>Performance Specifications</li>
-      <li>Design & Technology Insights</li>
-    </ul>
-  </article>
-</section>
+            <article class="cta-article">
+                <h3>Ready to Find Your BMW?</h3>
+                <p>Explore our collection of premium vehicles or get in touch with our expert team.</p>
+                <nav class="cta-buttons">
+                    <a href="Cars.html" class="btn btn-primary">Browse Cars</a>
+                    <a href="Contact-us.html" class="btn btn-secondary">Contact Us</a>
+                </nav>
+            </article>
+        </section>
+    </main>
 
-</main>
-
-<footer>
-  <p>BMW Nation © 2026</p>
-</footer>
-
+    <footer>
+        <div class="footer-content">
+            <section class="footer-section">
+                <h4>BMW Nation</h4>
+                <p>Your premier destination for luxury vehicles</p>
+            </section>
+            <section class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Cars.html">Browse Cars</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                </ul>
+            </section>
+            <section class="footer-section">
+                <h4>Connect</h4>
+                <p>Gaborone, Botswana</p>
+                <p><a href="tel:+267785279711">+267 785 279 711</a></p>
+                <p><a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
+            </section>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMW Nation. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
