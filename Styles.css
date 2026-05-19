@@ -8,25 +8,25 @@
 }
 
 /* =========================
-   ROOT VARIABLES
+   ROOT COLORS
 ========================= */
 :root {
     --primary: #00aaff;
     --dark: #111;
-    --light: #f4f4f4;
+    --light: #f5f5f5;
     --white: #ffffff;
 }
 
 /* =========================
-   BODY (NO PAGE SCROLL)
+   BODY
 ========================= */
 body {
     font-family: Arial, sans-serif;
     background: var(--light);
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* =========================
@@ -36,35 +36,32 @@ header {
     background: var(--dark);
     color: var(--white);
     padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-figure {
+.header-container {
     display: flex;
     align-items: center;
+    gap: 12px;
 }
 
-figure img {
-    width: 45px;
-    margin-right: 10px;
+header img {
+    width: 50px;
 }
 
 /* =========================
    NAVIGATION
 ========================= */
 nav {
-    background: #222;
-    padding: 10px;
+    background: #1a1a1a;
+    padding: 12px;
     text-align: center;
 }
 
 nav a {
-    color: var(--white);
-    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    margin: 0 12px;
+    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -73,56 +70,50 @@ nav a:hover {
 }
 
 /* =========================
-   MAIN LAYOUT
+   MAIN
 ========================= */
 main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 .hero {
-    height: 50vh;
-    background: url('images/m3.jpg') no-repeat center/cover;
+    min-height: 60vh;
+    background: url('images/m3.jpg') center/cover no-repeat;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.hero article {
-    background: rgba(0,0,0,0.6);
-    color: var(--white);
-    padding: 25px;
-    border-radius: 8px;
+    justify-content: center;
     text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.6);
+    padding: 25px;
+    border-radius: 10px;
 }
 
 /* =========================
-   BOOTSTRAP CAR GRID FIX
+   CAR GRID
 ========================= */
-#car-container {
-    flex: 1;
-    overflow: hidden;
-    display: flex;
-}
-
-#car-container .row {
-    width: 100%;
-    margin: 0;
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+    padding: 20px;
 }
 
 /* =========================
-   CAR CARD (BOOTSTRAP FRIENDLY)
+   CAR CARD
 ========================= */
 .car-card {
     background: var(--white);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     transition: 0.3s;
-    height: 100%;
 }
 
 .car-card:hover {
@@ -142,127 +133,29 @@ main {
 }
 
 /* =========================
-   GRID FALLBACK (if no Bootstrap)
+   SECTIONS
 ========================= */
-.car-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    flex: 1;
+section {
+    padding: 40px 20px;
 }
 
-/* =========================
-   MODELS PAGE
-========================= */
-.models {
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.car-detail {
+article {
     background: var(--white);
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.car-images {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.car-images img {
-    width: 48%;
-    border-radius: 6px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-.about-section {
-    padding: 20px;
-}
-
-.about-section article {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   TEAM
-========================= */
-.team {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.team article {
-    text-align: center;
-}
-
-.team img {
-    width: 100px;
-    border-radius: 50%;
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact-section {
-    padding: 20px;
-}
-
-.contact-section article {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    flex: 1;
-}
-
-/* =========================
-   FORM
-========================= */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input, textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* VALIDATION */
-input:valid, textarea:valid {
-    border-color: green;
-}
-
-input:invalid, textarea:invalid {
-    border-color: red;
-}
-
-/* =========================
-   BUTTON
+   BUTTONS
 ========================= */
 button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
+    padding: 10px 15px;
     background: var(--dark);
-    color: var(--white);
-    border-radius: 5px;
+    color: white;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -274,10 +167,32 @@ button:hover {
 /* =========================
    PAGINATION
 ========================= */
-.pagination-box {
-    text-align: center;
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
     padding: 10px;
-    background: var(--white);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
 }
 
 /* =========================
@@ -285,35 +200,62 @@ button:hover {
 ========================= */
 footer {
     background: var(--dark);
-    color: var(--white);
+    color: white;
     text-align: center;
-    padding: 12px;
+    padding: 15px;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
     nav a {
         display: block;
         margin: 8px 0;
     }
 
     .hero {
-        height: 35vh;
+        min-height: 40vh;
     }
+}
 
-    .car-images img {
-        width: 100%;
-    }
+/* =========================
+   ⭐ FEEDBACK PAGE STYLING
+========================= */
 
-    .team {
-        flex-direction: column;
-    }
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+#feedbackForm input,
+#feedbackForm textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#feedbackForm input:focus,
+#feedbackForm textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.feedback-card {
+    background: var(--white);
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.feedback-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
