@@ -1,217 +1,278 @@
-
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+    --primary: #00aaff;
+    --dark: #111;
+    --light: #f4f4f4;
+    --white: #ffffff;
+}
+
+/* =========================
+   BODY (NO SCROLL)
+========================= */
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    line-height: 1.6;
+    background: var(--light);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
-    background: #111;
-    color: white;
-    padding: 15px;
+    background: var(--dark);
+    color: var(--white);
+    padding: 15px 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
+figure {
     display: flex;
     align-items: center;
 }
 
-.logo img {
-    width: 40px;
+figure img {
+    width: 45px;
     margin-right: 10px;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
 nav {
-    background: #333;
+    background: #222;
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: var(--white);
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #00aaff;
+    color: var(--primary);
 }
 
-/* HERO */
-.hero {
-    background: url('images/m3.jpg') no-repeat center/cover;
-    height: 60vh;
+/* =========================
+   MAIN LAYOUT
+========================= */
+main {
+    flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 55vh;
+    background: url('images/m3.jpg') no-repeat center/cover;
+    display: flex;
     justify-content: center;
-    color: white;
+    align-items: center;
+}
+
+.hero article {
+    background: rgba(0,0,0,0.65);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
     text-align: center;
 }
 
-.hero-text {
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-}
-
-.hero-buttons a {
+.hero a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background: #00aaff;
-    color: white;
+    background: var(--primary);
+    color: var(--white);
     text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.hero-buttons a:hover {
+.hero a:hover {
     background: #0077aa;
 }
 
-/* CONTAINERS */
-.container, .contact-container, .about-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* BOX */
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    flex: 1;
-}
-
-/* CAR GRID */
+/* =========================
+   CAR GRID (NO PAGE SCROLL)
+========================= */
 .car-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 15px;
+    padding: 20px;
+
+    /* Internal scrolling only */
+    overflow-y: auto;
+    max-height: 60vh;
 }
 
-.car-card {
-    background: white;
+/* =========================
+   CAR CARD
+========================= */
+article.car {
+    background: var(--white);
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-.car-card img {
+article.car:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+article.car img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
-/* MODELS PAGE */
+/* =========================
+   PAGINATION
+========================= */
+.pagination {
+    text-align: center;
+    padding: 10px;
+}
+
+.pagination button {
+    padding: 8px 18px;
+    margin: 5px;
+    border: none;
+    background: var(--dark);
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pagination button:hover {
+    background: var(--primary);
+}
+
+.pagination span {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* =========================
+   MODELS PAGE
+========================= */
 .models {
-    padding: 40px 20px;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .car-detail {
-    background: white;
+    background: var(--white);
     padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .car-images {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .car-images img {
     width: 48%;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
-/* SPECS */
-.car-detail ul {
-    list-style: none;
-    margin: 10px 0;
-}
-
-.car-detail li {
-    padding: 5px 0;
-}
-
-/* ABOUT */
+/* =========================
+   ABOUT SECTION
+========================= */
 .about-section {
-    padding: 40px 20px;
-}
-
-.about-box {
-    background: white;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
 }
 
-/* TEAM */
-.team {
-    display: flex;
-    gap: 20px;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-member img {
-    width: 120px;
-    border-radius: 50%;
-}
-
-/* CONTACT */
-.contact-section {
-    padding: 40px 20px;
-}
-
-.contact-info,
-.contact-form {
-    background: white;
+.about-section article {
+    background: var(--white);
     padding: 20px;
-    border-radius: 5px;
-    flex: 1;
-}
-
-/* FORM */
-.form-group {
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
-.form-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+/* =========================
+   TEAM
+========================= */
+.team {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
+.team article {
+    text-align: center;
+}
+
+.team img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-section {
+    padding: 20px;
+}
+
+.contact-section article {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+/* =========================
+   FORM
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
     padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 /* VALIDATION */
-.error {
-    color: red;
-    font-size: 12px;
-}
-
 input:valid, textarea:valid {
     border-color: green;
 }
@@ -222,10 +283,12 @@ input:invalid, textarea:invalid {
 
 /* BUTTON */
 button {
-    background: #00aaff;
-    color: white;
-    border: none;
+    margin-top: 15px;
     padding: 10px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -233,25 +296,19 @@ button:hover {
     background: #0077aa;
 }
 
-/* MAP */
-.map-box {
-    height: 200px;
-    background: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
-    background: #111;
-    color: white;
+    background: var(--dark);
+    color: var(--white);
     text-align: center;
-    padding: 15px;
+    padding: 12px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
 
     header {
@@ -261,7 +318,11 @@ footer {
 
     nav a {
         display: block;
-        margin: 5px 0;
+        margin: 8px 0;
+    }
+
+    .hero {
+        height: 40vh;
     }
 
     .car-images img {
@@ -270,5 +331,9 @@ footer {
 
     .team {
         flex-direction: column;
+    }
+
+    .car-grid {
+        max-height: 50vh;
     }
 }
