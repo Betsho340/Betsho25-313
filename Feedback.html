@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Share your feedback about BMW Nation - we value your opinion">
     <title>Customer Feedback - BMW Nation</title>
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <hgroup class="logo-section">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Nation Logo" class="logo">
-                <h1>BMW NATION</h1>
-            </hgroup>
-            <p class="header-tagline">Luxury • Performance • Innovation</p>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+                <div class="logo-text">
+                    <h1>BMW NATION</h1>
+                    <div class="tagline">Luxury • Performance • Innovation</div>
+                </div>
+            </div>
         </div>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" class="nav-link"><span>Home</span></a>
+            <a href="About-us.html" class="nav-link"><span>About</span></a>
+            <a href="Cars.html" class="nav-link"><span>Cars</span></a>
+            <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
+            <a href="Feedback.html" class="nav-link active"><span>Feedback</span></a>
+        </nav>
     </header>
-
-    <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link"><span>Home</span></a>
-        <a href="About-us.html" class="nav-link"><span>About</span></a>
-        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
-        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
-        <a href="Feedback.html" class="nav-link active"><span>Feedback</span></a>
-    </nav>
 
     <script>
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -63,7 +64,7 @@
                             <label for="rating">Rating (1 - 5) *</label>
                             <div class="rating-input">
                                 <input type="range" id="rating" name="rating" min="1" max="5" value="3" required>
-                                <span id="rating-display">3 ⭐</span>
+                                <span id="rating-display">3 stars</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -73,7 +74,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Submit Feedback</button>
                         <div class="success-message" id="success-message" style="display: none;">
-                            ✓ Thank you! Your feedback has been recorded.
+                            Thank you! Your feedback has been recorded.
                         </div>
                     </form>
                 </article>
@@ -120,7 +121,7 @@
         const ratingInput = document.getElementById("rating");
         const ratingDisplay = document.getElementById("rating-display");
         ratingInput.addEventListener("input", function() {
-            ratingDisplay.textContent = this.value + " ⭐";
+            ratingDisplay.textContent = this.value + " stars";
         });
 
         document.getElementById("feedbackForm").addEventListener("submit", function(e) {
@@ -144,7 +145,7 @@
                 localStorage.setItem("bmw_feedbacks", JSON.stringify(feedbacks));
                 document.getElementById("success-message").style.display = "block";
                 this.reset();
-                ratingDisplay.textContent = "3 ⭐";
+                ratingDisplay.textContent = "3 stars";
                 setTimeout(() => { document.getElementById("success-message").style.display = "none"; }, 4000);
                 renderFeedback();
             }
@@ -163,7 +164,7 @@
                 <div class="feedback-card">
                     <div class="feedback-header">
                         <h4>${escapeHtml(fb.name)}</h4>
-                        <span class="feedback-rating">${"⭐".repeat(fb.rating)}</span>
+                        <span class="feedback-rating">${"★".repeat(fb.rating)}</span>
                     </div>
                     <p class="feedback-message">${escapeHtml(fb.message)}</p>
                     <p class="feedback-meta">${fb.timestamp}</p>
