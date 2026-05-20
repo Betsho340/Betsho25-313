@@ -5,190 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BMW Nation - Explore luxury BMW vehicles with performance and innovation">
     <title>BMW Nation - Luxury Cars</title>
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="header-container">
-            <hgroup class="logo-section">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Nation Logo" class="logo">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+            <div>
                 <h1>BMW NATION</h1>
-            </hgroup>
-            <p class="header-tagline">Luxury • Performance • Innovation</p>
+                <div class="tagline">Luxury • Performance • Innovation</div>
+            </div>
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="About-us.html">About</a>
+            <a href="Cars.html">Cars</a>
+            <a href="Contact-us.html">Contact</a>
+            <a href="Feedback.html">Feedback</a>
+        </nav>
     </header>
 
-    <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link active"><span>Home</span></a>
-        <a href="About-us.html" class="nav-link"><span>About</span></a>
-        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
-        <a href="Contact-us.html" class="nav-link"><span>Contact</span></a>
-        <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
-    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Explore BMW Excellence</h2>
+        <p>Experience the pinnacle of luxury and performance</p>
+        <div class="buttons">
+            <button onclick="window.location.href='Cars.html'">View Cars</button>
+            <button onclick="window.location.href='Contact-us.html'">Get in Touch</button>
+        </div>
+    </section>
 
-    <script>
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    </script>
+    <!-- Featured Model Section -->
+    <section class="featured">
+        <div class="featured-content">
+            <h3>Featured Model</h3>
+            <div class="featured-subtitle">The Ultimate Performance Machine</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg" alt="BMW M3 Competition">
+            
+            <h4 style="color: #fff; font-size: 20px; margin: 20px 0 10px 0;">BMW M3 Competition</h4>
+            <p style="color: #aaa; margin: 0 0 20px 0;">Pure Performance. Pure Driving.</p>
 
-    <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <article class="hero-content">
-                <h2 class="hero-title">Explore BMW Excellence</h2>
-                <p class="hero-subtitle">Experience the pinnacle of luxury and performance</p>
-                <nav class="hero-buttons">
-                    <a href="Cars.html" class="btn btn-primary btn-lg">View Cars</a>
-                    <a href="Contact-us.html" class="btn btn-secondary btn-lg">Get in Touch</a>
-                </nav>
-            </article>
-            <div class="hero-image" style="
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg');
-                background-size: cover;
-                background-position: center;
-                display: block;
-            "></div>
-        </section>
-
-        <section class="featured">
-            <header class="section-header">
-                <h2>Featured Model</h2>
-                <p>The Ultimate Performance Machine</p>
-            </header>
-            <article class="featured-card">
-                <figure class="featured-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/BMW_G80_M3_Competition_BMW_Individual_Tanzanite_Blue_Metallic_%282%29.jpg"
-                         alt="BMW M3 Competition G80 luxury sports car"
-                         loading="eager">
-                </figure>
-                <article class="featured-content">
-                    <h3>BMW M3 Competition</h3>
-                    <p class="featured-tagline">Pure Performance. Pure Driving.</p>
-                    <section class="specs-grid">
-                        <article class="spec-item">
-                            <span class="spec-icon">&#9889;</span>
-                            <section class="spec-info">
-                                <span class="spec-label">Power Output</span>
-                                <span class="spec-value">503 hp</span>
-                            </section>
-                        </article>
-                        <article class="spec-item">
-                            <span class="spec-icon">&#128293;</span>
-                            <section class="spec-info">
-                                <span class="spec-label">Acceleration</span>
-                                <span class="spec-value">0-100 km/h in 3.8s</span>
-                            </section>
-                        </article>
-                        <article class="spec-item">
-                            <span class="spec-icon">&#128168;</span>
-                            <section class="spec-info">
-                                <span class="spec-label">Top Speed</span>
-                                <span class="spec-value">290 km/h</span>
-                            </section>
-                        </article>
-                        <article class="spec-item">
-                            <span class="spec-icon">&#127942;</span>
-                            <section class="spec-info">
-                                <span class="spec-label">Vehicle Type</span>
-                                <span class="spec-value">Performance Sedan</span>
-                            </section>
-                        </article>
-                    </section>
-                    <p class="featured-description">The BMW M3 Competition represents the epitome of performance engineering. With its stunning acceleration, precise handling, and luxurious interior, it delivers an unforgettable driving experience.</p>
-                    <nav class="featured-buttons">
-                        <a href="Cars.html" class="btn btn-primary">Explore Collection</a>
-                        <a href="Contact-us.html" class="btn btn-outline">Request Test Drive</a>
-                    </nav>
-                </article>
-            </article>
-        </section>
-
-        <section style="padding: 50px 20px; background: #f8f9fa;">
-            <header class="section-header">
-                <h2>Our Collection</h2>
-                <p>A glimpse of what awaits you</p>
-            </header>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1400px; margin: 0 auto;">
-                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/BMW_M4_Coupe_%28F82%29_front.JPG" alt="BMW M4" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
-                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW M4 Competition</div>
-                </a>
-                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/2024_BMW_X5.jpg" alt="BMW X5" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
-                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW X5</div>
-                </a>
-                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/BMW_i8_%28I12%29_front.JPG" alt="BMW i8" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
-                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW i8 Hybrid</div>
-                </a>
-                <a href="Cars.html" style="display:block; border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.1); transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/BMW_X6_front.jpg" alt="BMW X6" style="width:100%;height:150px;object-fit:cover;" loading="lazy">
-                    <div style="padding:12px;background:#fff;font-weight:700;font-size:14px;color:#0a0e27;">BMW X6</div>
-                </a>
+            <!-- Specs Grid -->
+            <div class="specs">
+                <div class="spec-item">
+                    <div class="label">Power Output</div>
+                    <div class="value">503 hp</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">Acceleration</div>
+                    <div class="value">0-100 km/h in 3.8s</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">Top Speed</div>
+                    <div class="value">290 km/h</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">Vehicle Type</div>
+                    <div class="value">Performance Sedan</div>
+                </div>
             </div>
-            <div style="text-align:center;margin-top:30px;">
-                <a href="Cars.html" class="btn btn-primary btn-lg">View All 8 Models</a>
+
+            <p style="color: #aaa; margin: 20px 0;">The BMW M3 Competition represents the epitome of performance engineering. With its stunning acceleration, precise handling, and luxurious interior, it delivers an unforgettable driving experience.</p>
+
+            <div class="buttons">
+                <button onclick="window.location.href='Cars.html'">Explore Collection</button>
+                <button onclick="window.location.href='Contact-us.html'">Request Test Drive</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="highlights">
-            <header class="section-header">
-                <h2>Why BMW Nation?</h2>
-                <p>Premium Selection • Expert Service • Unbeatable Prices</p>
-            </header>
-            <section class="highlights-grid">
-                <article class="highlight-card">
-                    <span class="highlight-icon">&#10003;</span>
-                    <h3>Curated Selection</h3>
-                    <p>Hand-picked luxury vehicles that meet our strict quality standards</p>
-                </article>
-                <article class="highlight-card">
-                    <span class="highlight-icon">&#128101;</span>
-                    <h3>Expert Support</h3>
-                    <p>Knowledgeable team ready to help you find your perfect BMW</p>
-                </article>
-                <article class="highlight-card">
-                    <span class="highlight-icon">&#128176;</span>
-                    <h3>Great Prices</h3>
-                    <p>Competitive pricing on premium vehicles with flexible options</p>
-                </article>
-                <article class="highlight-card">
-                    <span class="highlight-icon">&#128666;</span>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick and secure delivery across Botswana</p>
-                </article>
-            </section>
-        </section>
-    </main>
+    <!-- Collection Section -->
+    <section class="collection">
+        <h3 class="collection-title">Our Collection</h3>
+        <p style="text-align: center; color: #aaa; margin: 0 0 30px 0;">A glimpse of what awaits you</p>
 
+        <div class="cars-grid">
+            <div class="car-card">
+                <h4>BMW M4</h4>
+                <p>M4 Competition</p>
+            </div>
+            <div class="car-card">
+                <h4>BMW X5</h4>
+                <p>Luxury SUV</p>
+            </div>
+            <div class="car-card">
+                <h4>BMW i8</h4>
+                <p>Hybrid Sports</p>
+            </div>
+            <div class="car-card">
+                <h4>BMW X6</h4>
+                <p>Performance SUV</p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="window.location.href='Cars.html'">View All 8 Models</button>
+        </div>
+    </section>
+
+    <!-- Why BMW Nation Section -->
+    <section class="why-section">
+        <h3 class="why-title">Why BMW Nation?</h3>
+        <p style="text-align: center; color: #aaa; margin: 0 0 30px 0;">Premium Selection • Expert Service • Unbeatable Prices</p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">Curated Selection</div>
+                <div class="feature-desc">Hand-picked luxury vehicles that meet our strict quality standards</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Expert Support</div>
+                <div class="feature-desc">Knowledgeable team ready to help you find your perfect BMW</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Great Prices</div>
+                <div class="feature-desc">Competitive pricing on premium vehicles with flexible options</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">Fast Delivery</div>
+                <div class="feature-desc">Quick and secure delivery across Botswana</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <section class="footer-section">
-                <h4>BMW Nation</h4>
-                <p>Your premier destination for luxury vehicles</p>
-            </section>
-            <section class="footer-section">
-                <h4>Quick Links</h4>
+            <div class="footer-section">
+                <h3>BMW Nation</h3>
+                <p style="color: #aaa; font-size: 13px;">Your premier destination for luxury vehicles</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
                 <ul>
                     <li><a href="Cars.html">Browse Cars</a></li>
                     <li><a href="Contact-us.html">Contact Us</a></li>
                     <li><a href="Feedback.html">Feedback</a></li>
                 </ul>
-            </section>
-            <section class="footer-section">
-                <h4>Connect</h4>
-                <p>Gaborone, Botswana</p>
-                <p><a href="tel:+267785279711">+267 785 279 711</a></p>
-                <p><a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a></p>
-            </section>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="contact-info">
+                    Gaborone, Botswana<br>
+                    <a href="tel:+267785279711">+267 785 279 711</a><br>
+                    <a href="mailto:shakambayoronnie@gmail.com">shakambayoronnie@gmail.com</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BMW Nation. All rights reserved.</p>
+        <div class="copyright">
+            © 2026 BMW Nation. All rights reserved.
         </div>
     </footer>
 </body>
