@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact BMW Nation - Get in touch with us today">
     <title>Contact Us - BMW Nation</title>
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <hgroup class="logo-section">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Nation Logo" class="logo">
-                <h1>BMW NATION</h1>
-            </hgroup>
-            <p class="header-tagline">Luxury • Performance • Innovation</p>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+                <div class="logo-text">
+                    <h1>BMW NATION</h1>
+                    <div class="tagline">Luxury • Performance • Innovation</div>
+                </div>
+            </div>
         </div>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" class="nav-link"><span>Home</span></a>
+            <a href="About-us.html" class="nav-link"><span>About</span></a>
+            <a href="Cars.html" class="nav-link"><span>Cars</span></a>
+            <a href="Contact-us.html" class="nav-link active"><span>Contact</span></a>
+            <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
+        </nav>
     </header>
-
-    <nav aria-label="Main Navigation">
-        <a href="index.html" class="nav-link"><span>Home</span></a>
-        <a href="About-us.html" class="nav-link"><span>About</span></a>
-        <a href="Cars.html" class="nav-link"><span>Cars</span></a>
-        <a href="Contact-us.html" class="nav-link active"><span>Contact</span></a>
-        <a href="Feedback.html" class="nav-link"><span>Feedback</span></a>
-    </nav>
 
     <script>
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -106,7 +107,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                         <div class="success-message" id="success-message" style="display: none;">
-                            ✓ Message sent successfully! We'll get back to you soon.
+                            Message sent successfully! We'll get back to you soon.
                         </div>
                     </form>
                 </article>
